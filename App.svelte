@@ -1,9 +1,27 @@
 <script lang="ts">
-  import { App } from "$types/app";
+  import { Service } from "$types/service";
+  import { onMount } from "svelte";
+  import Actions from "./Components/Actions.svelte";
+  import Header from "./Components/Header.svelte";
+  import IndepthInfo from "./Components/IndepthInfo.svelte";
+  import ProcessInfo from "./Components/ProcessInfo.svelte";
   import "./css/main.css";
+  import { ServiceInfoRuntime } from "./ts/runtime";
 
-  export let app: App;
+  export let runtime: ServiceInfoRuntime;
+
+  let id: string;
+  let target: Service;
+
+  onMount(() => {
+    runtime._targetService.subscribe((v) => (target = v));
+    runtime._targetId.subscribe((v) => (id = v));
+  });
 </script>
 
-<h1>Hello, World!</h1>
-<p>Working! App {app.metadata.name}, version {app.metadata.version}.</p>
+{#if id && target}
+  <Header {target} {id} />
+  <IndepthInfo {runtime} {target} />
+  <ProcessInfo {id}></ProcessInfo>
+  <Actions {runtime}></Actions>
+{/if}

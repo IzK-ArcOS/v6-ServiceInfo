@@ -1,0 +1,58 @@
+#ServiceInfo div.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#ServiceInfo div.header > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#ServiceInfo div.header div.left {
+  align-items: top;
+}
+
+#ServiceInfo div.header div.left img {
+  height: 64px;
+}
+
+#ServiceInfo div.header div.left p.name {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#ServiceInfo div.header div.left p.name img {
+  height: 20px;
+}
+
+#ServiceInfo div.header div.left p.description {
+  opacity: 0.5;
+  margin: 0;
+}
+
+#ServiceInfo div.header div.right button {
+  height: 32px;
+  margin: 0;
+}
+
+#ServiceInfo div.header div.right button.flip {
+  background-color: var(--clr-red-fg);
+  color: var(--clr-red-bg);
+}
+
+#ServiceInfo div.header div.right button.flip.stopped {
+  background-color: var(--clr-green-fg);
+  color: var(--clr-green-bg);
+}
+
+#ServiceInfo div.header div.right button.material-icons-round {
+  padding: 0;
+  width: 35px;
+  font-size: 20px;
+}

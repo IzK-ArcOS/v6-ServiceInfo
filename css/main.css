@@ -1,3 +1,24 @@
-window#appTemplate { /* Rename appTemplate to the ID of the app */
-  color: #f0f;
+@import url("./header.css");
+@import url("./infoblock.css");
+
+#ServiceInfo {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#ServiceInfo > div.body {
+  padding: 25px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+  background-color: var(--win-bg);
+}
+
+#ServiceInfo #ErrorDialog {
+  max-width: 460px !important;
+}
+
+#ServiceInfo > div.titlebar {
+  border-bottom: var(--win-border-light);
 }
