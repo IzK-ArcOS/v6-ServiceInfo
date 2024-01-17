@@ -2,6 +2,10 @@
   import { ServiceInfoIcon } from "$ts/images/apps";
   import { GlobalDispatch } from "$ts/process/dispatch/global";
   import { getService, startService, stopService } from "$ts/service/interact";
+  import {
+    startServiceNotified,
+    stopServiceNotified,
+  } from "$ts/service/wrapper";
   import { Service } from "$types/service";
   import { onMount } from "svelte";
 
@@ -18,8 +22,8 @@
   GlobalDispatch.subscribe("services-flush", update);
 
   async function toggleDisable() {
-    if (target.pid) await stopService(id);
-    else await startService(id);
+    if (target.pid) await stopServiceNotified(id);
+    else await startServiceNotified(id);
   }
 </script>
 
