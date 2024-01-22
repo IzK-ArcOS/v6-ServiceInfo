@@ -41,9 +41,9 @@ export class ServiceInfoRuntime extends AppRuntime {
       return;
     }
 
-    const targetApp = getService(arg);
+    const targetService = getService(arg);
 
-    if (!targetApp) {
+    if (!targetService) {
       stop(arg);
 
       this.Log("Not opening ServiceInfo without a valid app-ID to pull data from.", "constructor", LogLevel.error);
@@ -51,8 +51,10 @@ export class ServiceInfoRuntime extends AppRuntime {
       return;
     }
 
+    this.setWindowTitle(`Information about ${targetService.name}`)
+
     this._targetId.set(arg)
-    this._targetService.set(targetApp);
+    this._targetService.set(targetService);
   }
 
   public startConditionDialog() {
