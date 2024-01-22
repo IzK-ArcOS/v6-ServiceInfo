@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { App } from "$types/app";
   import { Service } from "$types/service";
   import dayjs from "dayjs";
   import { ServiceInfoRuntime } from "../ts/runtime";

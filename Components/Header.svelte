@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ServiceInfoIcon } from "$ts/images/apps";
   import { GlobalDispatch } from "$ts/process/dispatch/global";
-  import { getService, startService, stopService } from "$ts/service/interact";
+  import { getService } from "$ts/service/interact";
   import {
     startServiceNotified,
     stopServiceNotified,
