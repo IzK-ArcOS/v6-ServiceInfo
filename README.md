@@ -1,4 +1,4 @@
-# Application Info
+# Service Info
 
 This repository is a submodule of [ArcOS v6](https://github.com/IzK-ArcOS/v6). It references APIs and code from the parent codebase to function, and will therefore not run outside of ArcOS itself.
 
