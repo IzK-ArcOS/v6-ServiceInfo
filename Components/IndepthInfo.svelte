@@ -1,8 +1,10 @@
 <script lang="ts">
+  import InfoBlock from "$state/Desktop/Components/ProcessRenderer/Window/InfoBlock.svelte";
+  import InfoRow from "$state/Desktop/Components/ProcessRenderer/Window/InfoBlock/InfoRow.svelte";
+  import Segment from "$state/Desktop/Components/ProcessRenderer/Window/InfoBlock/Row/Segment.svelte";
   import { Service } from "$types/service";
   import dayjs from "dayjs";
   import { ServiceInfoRuntime } from "../ts/runtime";
-  import Segment from "./IndepthInfo/Segment.svelte";
 
   export let target: Service;
   export let runtime: ServiceInfoRuntime;
@@ -15,8 +17,8 @@
   }
 </script>
 
-<div class="info-block">
-  <div class="row">
+<InfoBlock>
+  <InfoRow>
     <Segment title="Identifier">
       {target.id}
     </Segment>
@@ -24,22 +26,22 @@
       {target.initialState || "stopped"}
     </Segment>
     <Segment title="Handler">Stack</Segment>
-  </div>
-  <div class="row">
+  </InfoRow>
+  <InfoRow>
     <Segment title="Loaded At">
       {loadedAt}
     </Segment>
     <Segment title="Changed At">
       {changedAt}
     </Segment>
-  </div>
+  </InfoRow>
   {#if target.startCondition}
-    <div class="row">
+    <InfoRow>
       <Segment title="Start Condition" help={startConditionHelp}>
         <code>
           {target.startCondition}
         </code>
       </Segment>
-    </div>
+    </InfoRow>
   {/if}
-</div>
+</InfoBlock>

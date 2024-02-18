@@ -1,60 +1,15 @@
-@import url("./infoblock/controls.css");
-@import url("./infoblock/actions.css");
-
-#ServiceInfo div.info-block {
-  background-color: var(--button-bg);
-  border-radius: var(--win-border-rad);
+#ServiceInfo div.info-block.actions {
+  margin-top: auto;
 }
 
-#ServiceInfo div.info-block div.row {
-  display: flex;
-  gap: 30px;
-  padding: 10px 15px;
-}
-
-#ServiceInfo div.info-block div.segment {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-
-#ServiceInfo div.info-block div.segment p.title {
-  opacity: 0.5;
-  margin: 0;
-  font-weight: bold;
-  display: flex;
-  gap: 5px;
+#ServiceInfo div.info-block.actions div.row {
+  gap: 10px !important;
+  padding: 10px;
+  justify-content: end;
+  width: 100%;
   align-items: center;
 }
 
-#ServiceInfo div.info-block div.segment p.title button.help {
+#ServiceInfo div.info-block.actions div.row button {
   margin: 0;
-  padding: 0;
-  font-size: 16px;
-  background-color: transparent;
-}
-
-#ServiceInfo div.info-block div.segment p.title button.help:hover {
-  color: var(--accent-light);
-}
-
-#ServiceInfo div.info-block div.segment.right {
-  margin-left: auto;
-  margin-top: -10px;
-  margin-bottom: -10px;
-  justify-content: center;
-  border-left: var(--win-border);
-  padding-left: 15px;
-}
-
-#ServiceInfo div.info-block div.segment code {
-  background-color: transparent;
-}
-
-#ServiceInfo div.info-block div.row + div.row {
-  border-top: var(--win-border);
-}
-
-#ServiceInfo div.info-block div.row > button.action {
-  margin-left: auto;
 }

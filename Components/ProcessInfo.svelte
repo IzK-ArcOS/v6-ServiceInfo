@@ -1,9 +1,11 @@
 <script lang="ts">
+  import InfoBlock from "$state/Desktop/Components/ProcessRenderer/Window/InfoBlock.svelte";
+  import InfoRow from "$state/Desktop/Components/ProcessRenderer/Window/InfoBlock/InfoRow.svelte";
+  import Segment from "$state/Desktop/Components/ProcessRenderer/Window/InfoBlock/Row/Segment.svelte";
   import { GlobalDispatch } from "$ts/process/dispatch/global";
   import { getService } from "$ts/service/interact";
   import { Service } from "$types/service";
   import { onMount } from "svelte";
-  import Segment from "./IndepthInfo/Segment.svelte";
 
   export let id: string;
 
@@ -18,14 +20,14 @@
 </script>
 
 {#if service}
-  <div class="info-block">
-    <div class="row">
+  <InfoBlock>
+    <InfoRow>
       <Segment title="Status">
         {service.pid ? "Running" : "Stopped"}
       </Segment>
       <Segment title="First PID">
         {service.pid || "-"}
       </Segment>
-    </div>
-  </div>
+    </InfoRow>
+  </InfoBlock>
 {/if}
