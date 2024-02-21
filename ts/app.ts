@@ -11,7 +11,7 @@ export const ServiceInfo: App = {
     version: "2.0.0",
     appGroup: "internal",
     icon: ServiceInfoIcon,
-    hidden: true
+    hidden: true,
   },
   runtime: ServiceInfoRuntime,
   content: AppSvelte,
@@ -25,12 +25,12 @@ export const ServiceInfo: App = {
     maximized: false,
     headless: false,
     fullscreen: false,
-    resizable: false
+    resizable: false,
   },
   controls: {
     minimize: true,
     maximize: false,
-    close: true
+    close: true,
   },
-  glass: true
-}
+  glass: true,
+};

@@ -2,10 +2,7 @@
   import { ServiceInfoIcon } from "$ts/images/apps";
   import { GlobalDispatch } from "$ts/process/dispatch/global";
   import { getService } from "$ts/service/interact";
-  import {
-    startServiceNotified,
-    stopServiceNotified,
-  } from "$ts/service/wrapper";
+  import { startServiceNotified, stopServiceNotified } from "$ts/service/wrapper";
   import { Service } from "$types/service";
   import { onMount } from "svelte";
 

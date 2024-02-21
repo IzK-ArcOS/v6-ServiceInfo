@@ -28,7 +28,7 @@ export class ServiceInfoRuntime extends AppRuntime {
         message: `Service Info was opened without a valid Service ID to pull the information from.${suffix}`,
         image: ServiceInfoIcon,
         /* timeout: 3000, */
-      })
+      });
     }
 
     const arg = process.args[0] as string;
@@ -36,7 +36,11 @@ export class ServiceInfoRuntime extends AppRuntime {
     if (!arg || typeof arg !== "string") {
       stop();
 
-      this.Log("Not opening ServiceInfo without an ID to pull data from", "constructor", LogLevel.error);
+      this.Log(
+        "Not opening ServiceInfo without an ID to pull data from",
+        "constructor",
+        LogLevel.error
+      );
 
       return;
     }
@@ -46,24 +50,32 @@ export class ServiceInfoRuntime extends AppRuntime {
     if (!targetService) {
       stop(arg);
 
-      this.Log("Not opening ServiceInfo without a valid app-ID to pull data from.", "constructor", LogLevel.error);
+      this.Log(
+        "Not opening ServiceInfo without a valid app-ID to pull data from.",
+        "constructor",
+        LogLevel.error
+      );
 
       return;
     }
 
-    this.setWindowTitle(`Information about ${targetService.name}`)
+    this.setWindowTitle(`Information about ${targetService.name}`);
 
-    this._targetId.set(arg)
+    this._targetId.set(arg);
     this._targetService.set(targetService);
   }
 
   public startConditionDialog() {
-    createErrorDialog({
-      title: "Start Condition",
-      component: StartCondition,
-      buttons: [{ caption: "Understood", action() { }, suggested: true }],
-      image: ServiceInfoIcon,
-      sound: "arcos.dialog.info"
-    }, this.process.pid, true)
+    createErrorDialog(
+      {
+        title: "Start Condition",
+        component: StartCondition,
+        buttons: [{ caption: "Understood", action() {}, suggested: true }],
+        image: ServiceInfoIcon,
+        sound: "arcos.dialog.info",
+      },
+      this.process.pid,
+      true
+    );
   }
 }
